@@ -1,0 +1,404 @@
+@import "reset";
+@import "compass/css3";
+
+#policeBox {
+  max-width: 4.65em;
+  margin: 20px auto;
+  padding-left: 0.18em;
+  opacity: 1;
+}
+
+#frame {
+  height: 6.68em;
+}
+
+#doors {
+  &::before {
+    content: '';
+    width: 0.50em;
+    display: block;
+    height: 7.74em;
+    float: left;
+    background: #145788;
+    border: 0.010em solid #1066a8;
+    border-left: 0.010em solid #1066a8;
+    border-right: 0.050em solid #0c2d4c;
+    border-bottom: none;
+    margin-top: -0.96em;
+    @include border-radius (0.050em 0.050em 0 0);
+    position: relative;
+    z-index: 1;
+  }
+  &::after {
+    content: '';
+    width: 0.50em;
+    display: block;
+    height: 7.74em;
+    float: left;
+    background: #145788;
+    border: 0.010em solid #1066a8;
+    border-left: 0.010em solid #1066a8;
+    border-right: 0.050em solid #0c2d4c;
+    border-bottom: none;
+    margin-top: -0.96em;
+    @include border-radius (0.050em 0.050em 0 0);
+    position: relative;
+    z-index: 1;
+    border-right: 0;
+    border-left: 0.050em solid #0c2d4c;
+    @include border-radius (0.050em 0.050em 0 0);
+  }
+}
+
+.door {
+  background: #0c4f83;
+  display: block;
+  width: 1.25em;
+  float: left;
+  border: 0.01em solid black;
+  padding: 0.25em;
+  padding-bottom: 0;
+  @include box-shadow (inset 0.020em 0 0.20em #000);
+  &.right {
+    @include box-shadow (inset -0.020em 0 0.20em #000);
+    position: relative;
+    &::before {
+      display: block;
+      width: 0.10em;
+      height: 6.8em;
+      background: #0c4f83;
+      z-index: 9;
+      position: absolute;
+      content: '';
+      top: 0;
+      left: -0.07em;
+      border: 0.01em solid #1066a8;
+      @include box-shadow (0 0 0.050em #000);
+    }
+  }
+}
+
+/* Step 5: We add a narrow strip before the right door */
+
+.window {
+  width: 100%;
+  height: 1.38em;
+  display: block;
+  border: 0.01em solid #000;
+  @include box-shadow (0 0.010em 0.050em 0 #000);
+  padding: 0.055em;
+  padding-left: 0;
+  box-sizing: border-box;
+  margin-bottom: 0.25em;
+  border: 0.01em solid #fff;
+  li {
+    box-sizing: border-box;
+    float: left;
+    width: 0.34em;
+    height: 0.60em;
+    display: block;
+    margin-left: 0.050em;
+    margin-bottom: 0.050em;
+    @include box-shadow (inset 0 0.010em 0.045em #000);
+    background: #6e696f;
+    border: 0.01em solid #fff;
+    &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+      box-shadow: inset 0 0.010em 0.045em #000;
+    }
+    &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(5) {
+      background: #444045;
+    }
+  }
+}
+
+.panel {
+  width: 100%;
+  height: 1.38em;
+  display: block;
+  @include box-shadow (0 0 0.02em 0 #000);
+  padding-left: 0;
+  box-sizing: border-box;
+  margin-bottom: 0.25em;
+  @include box-shadow (inset 0 0.020em 0.20em #000);
+  border-bottom: 0.010em solid #1066a8;
+  &.notice {
+    position: relative;
+    box-shadow: 0 0.010em 0.010em #000;
+    border-top: 0.010em solid #1066A8;
+    border-bottom: none;
+  }
+}
+
+.instructions {
+  width: 1.1em;
+  height: 1.2em;
+  display: block;
+  padding: 0.075em 0.050em 0;
+  box-sizing: border-box;
+  box-shadow: inset 0 0.020em 0.030em #000;
+  position: absolute;
+  top: 0.08em;
+  left: 0.08em;
+  border-bottom: 0.010em solid #1066A8;
+  color: #111;
+  font-family: serif;
+  overflow: hidden;
+  h2 {
+    font-size: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.4em;
+    text-align: center;
+  }
+  h4 {
+    font-size: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.4em;
+    text-align: center;
+    font-size: 0.13em;
+  }
+}
+
+.ie9 .instructions h4 {
+  font-size: 0.11em;
+}
+
+.instructions {
+  h3 {
+    font-size: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.4em;
+    small {
+      display: block;
+      font-size: 0.54em;
+      margin-bottom: 0.1em;
+    }
+  }
+  p {
+    font-size: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 0.6em;
+    text-align: center;
+    font-family: sans-serif;
+    line-height: 1.2em;
+  }
+}
+
+.window, .instructions {
+  background-color: rgb(223,224,217);
+  @include filter-gradient(#dfe0d9, #eff0e8, horizontal);
+  $experimental-support-for-svg: true;
+  @include background-image(radial-gradient(center, ellipse cover,  rgba(223,224,217,1) 0%,rgba(239,240,232,1) 100%));
+}
+
+#sign {
+  background: #0c4f83;
+  padding: 0.060em 0.3em;
+  z-index: 10;
+  position: relative;
+  box-shadow: 0 0.040em 0.20em #000;
+  border: 0.01em solid #1066a8;
+  border-bottom: 0;
+  @include border-radius (0.025em);
+  width: 4.1em;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+  text-shadow: 0 0 0.3em #fff;
+  &::before, &::after {
+    width: 0.15em;
+    display: block;
+    background: #0c4f83;
+    border: 0.01em solid #1066a8;
+    border-width: 0.01em 0.01em 0;
+    @include border-radius (0.025em 0 0 0.025em);
+    height: 0.6em;
+    position: absolute;
+    top: -0.010em;
+    z-index: 11;
+  }
+  &::before {
+    left: -0.44em;
+  }
+  &::after {
+    right: -0.45em;
+    @include border-radius (0 0.025em 0.025em 0);
+  }
+  h2 {
+    background: #091a45;
+    color: #fff;
+    font-size: 0.29em;
+    font-weight: 100;
+    text-transform: uppercase;
+    padding: 0.30em;
+    border: 0.040em solid #1066a8;
+    @include box-shadow (inset 0 0 0.50em 0 #000);
+    letter-spacing: 0.10em;
+    overflow: hidden;
+    height: 1em;
+    text-align: center;
+    width: 10em;
+    margin: 0 auto;
+    small {
+      font-size: 0.4em;
+      margin: 0 1em;
+      width: auto;
+      display: inline-block;
+      text-align: center;
+      letter-spacing: 0.30em;
+      font-weight: bold;
+      line-height: 1.2em;
+    }
+  }
+}
+
+#base {
+  content: '';
+  display: block;
+  height: 0.25em;
+  width: 5em;
+  background: #0c4f83;
+  content: '';
+  margin-left: -0.17em;
+  border-top: solid 0.010em #1066a8;
+  position: relative;
+  z-index: 10;
+  @include border-radius (0.050em 0.050em 0 0);
+  margin-top: 0.070em;
+}
+
+.skirting {
+  display: block;
+  content: '';
+  height: 0.6em;
+  width: 4em;
+  background: #0c4f83;
+  margin: 0 auto;
+  border: 0.010em solid #1066a8;
+  position: relative;
+  z-index: 1;
+  &::before, &::after {
+    content: '';
+    display: block;
+    width: 0.30em;
+    height: 0.40em;
+    border: 0.010em solid black;
+    position: absolute;
+    bottom: 0.23em;
+    @include border-radius (0.050em 0.050em 0 0);
+    background: #0c4f83;
+    border: 0.010em solid #1066a8;
+    border-right: 0.050em solid #0c2d4c;
+  }
+  &::before {
+    left: -0.20em;
+  }
+  &::after {
+    left: none;
+    right: -0.20em;
+    border-right: 0.010em solid #1066a8;
+    border-left: 0.050em solid #0c2d4c;
+  }
+}
+
+.roof {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 2em solid rgba(255, 255, 255, 0);
+  border-right: 2em solid rgba(255, 255, 255, 0);
+  border-bottom: 0.30em solid #1066a8;
+  margin-left: 0.32em;
+  position: relative;
+  margin-bottom: 0.14em;
+  &::after {
+    content: '';
+    display: block;
+    height: 0.25em;
+    width: 4.025em;
+    background: #df4800;
+    position: absolute;
+    left: -2em;
+    bottom: -0.57em;
+    background: #0c4f83;
+    border: 0.01em solid #1066a8;
+  }
+}
+
+.lamp {
+  width: 0.45em;
+  display: block;
+  content: '';
+  height: 0.65em;
+  background: #fff;
+  @include border-radius (0.050em);
+  position: relative;
+  margin: 0 auto -0.050em;
+  @include box-shadow (0 0 2em 0.5em #fff);
+  border: 0.030em solid #1a77ba;
+  z-index: 9;
+  border-width: 0.030em 0.030em 0;
+  &::after {
+    content: '';
+    display: block;
+    height: 0.15em;
+    width: 0.60em;
+    background: #1a77ba;
+    position: absolute;
+    bottom: -2;
+    left: -0.08em;
+    @include border-radius (0.050em 0.050em 0 0);
+    z-index: 9;
+    border-top: 0.001em #fff;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: -0.01em;
+    left: -0.05em;
+    background: #1a77ba;
+    height: 0.07em;
+    width: 0.55em;
+    z-index: 9;
+  }
+}
+
+/* Step 5 - We add images for the door handle, lock and badge */
+
+.panel.notice::after {
+  content: '';
+  background: url('../img/tardisSprite.png') 0 -0.2em no-repeat;
+  width: 0.20em;
+  height: 0.20em;
+  background-size: 0.20em;
+  display: block;
+  position: absolute;
+  left: 1.22em;
+  top: 1.40em;
+}
+
+.badge {
+  position: relative;
+  &::before {
+    content: '';
+    background: url('../img/tardisSprite.png') 0 -1em no-repeat;
+    width: 0.15em;
+    height: 0.75em;
+    background-size: 0.5em;
+    display: block;
+    position: absolute;
+    left: -0.16em;
+    top: 1.13em;
+  }
+  &::after {
+    content: '';
+    background: url('../img/tardisSprite.png') no-repeat;
+    width: 0.5em;
+    height: 0.5em;
+    background-size: 0.5em;
+    display: block;
+    position: absolute;
+    left: 0.37em;
+    top: 0.4em;
+  }
+}
