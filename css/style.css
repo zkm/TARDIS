@@ -358,6 +358,7 @@ table {
   text-align: center;
   width: 10em;
   margin: 0 auto;
+  white-space: nowrap;
 }
 /* line 242, ../sass/style.scss */
 #sign h2 small {
