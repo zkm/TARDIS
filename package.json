@@ -1,0 +1,21 @@
+{
+  "name": "tardis",
+  "version": "1.0.0",
+  "description": "Modernized TARDIS project using Dart Sass",
+  "scripts": {
+    "build-css": "sass sass/style.scss css/style.css --no-source-map",
+    "start": "vite",
+    "lint:scss": "stylelint 'sass/**/*.scss'",
+    "lint:scss:fix": "stylelint 'sass/**/*.scss' --fix",
+    "format": "prettier --write 'sass/**/*.scss'",
+    "format:check": "prettier --check 'sass/**/*.scss'"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.0",
+    "sass": "^1.69.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "stylelint-prettier": "^5.0.0",
+    "vite": "^7.1.3"
+  }
+}

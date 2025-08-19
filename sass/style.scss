@@ -1,5 +1,4 @@
-@import "reset";
-@import "compass/css3";
+@use 'reset';
 
 #policeBox {
   max-width: 4.65em;
@@ -14,7 +13,7 @@
 
 #doors {
   &::before {
-    content: "";
+    content: '';
     width: 0.5em;
     display: block;
     height: 7.74em;
@@ -25,28 +24,26 @@
     border-right: 0.05em solid #0c2d4c;
     border-bottom: none;
     margin-top: -0.96em;
-    @include border-radius(0.05em 0.05em 0 0);
+    border-radius: 0.05em 0.05em 0 0;
     position: relative;
     z-index: 1;
   }
+
   &::after {
-    content: "";
+    content: '';
     width: 0.5em;
     display: block;
     height: 7.74em;
     float: left;
     background: #145788;
     border: 0.01em solid #1066a8;
-    border-left: 0.01em solid #1066a8;
-    border-right: 0.05em solid #0c2d4c;
     border-bottom: none;
     margin-top: -0.96em;
-    @include border-radius(0.05em 0.05em 0 0);
     position: relative;
     z-index: 1;
     border-right: 0;
     border-left: 0.05em solid #0c2d4c;
-    @include border-radius(0.05em 0.05em 0 0);
+    border-radius: 0.05em 0.05em 0 0;
   }
 }
 
@@ -58,10 +55,12 @@
   border: 0.01em solid black;
   padding: 0.25em;
   padding-bottom: 0;
-  @include box-shadow(inset 0.02em 0 0.2em #000);
+  box-shadow: inset 0.02em 0 0.2em #000;
+
   &.right {
-    @include box-shadow(inset -0.02em 0 0.2em #000);
+    box-shadow: inset -0.02em 0 0.2em #000;
     position: relative;
+
     &::before {
       display: block;
       width: 0.1em;
@@ -69,11 +68,11 @@
       background: #0c4f83;
       z-index: 9;
       position: absolute;
-      content: "";
+      content: '';
       top: 0;
       left: -0.07em;
       border: 0.01em solid #1066a8;
-      @include box-shadow(0 0 0.05em #000);
+      box-shadow: 0 0 0.05em #000;
     }
   }
 }
@@ -84,13 +83,13 @@
   width: 100%;
   height: 1.38em;
   display: block;
-  border: 0.01em solid #000;
-  @include box-shadow(0 0.01em 0.05em 0 #000);
+  box-shadow: 0 0.01em 0.05em 0 #000;
   padding: 0.055em;
   padding-left: 0;
   box-sizing: border-box;
   margin-bottom: 0.25em;
   border: 0.01em solid #fff;
+
   li {
     box-sizing: border-box;
     float: left;
@@ -99,14 +98,16 @@
     display: block;
     margin-left: 0.05em;
     margin-bottom: 0.05em;
-    @include box-shadow(inset 0 0.01em 0.045em #000);
+    box-shadow: inset 0 0.01em 0.045em #000;
     background: #6e696f;
     border: 0.01em solid #fff;
+
     &:nth-child(1),
     &:nth-child(2),
     &:nth-child(3) {
       box-shadow: inset 0 0.01em 0.045em #000;
     }
+
     &:nth-child(1),
     &:nth-child(2),
     &:nth-child(3),
@@ -120,12 +121,12 @@
   width: 100%;
   height: 1.38em;
   display: block;
-  @include box-shadow(0 0 0.02em 0 #000);
   padding-left: 0;
   box-sizing: border-box;
   margin-bottom: 0.25em;
-  @include box-shadow(inset 0 0.02em 0.2em #000);
+  box-shadow: inset 0 0.02em 0.2em #000;
   border-bottom: 0.01em solid #1066a8;
+
   &.notice {
     position: relative;
     box-shadow: 0 0.01em 0.01em #000;
@@ -148,37 +149,34 @@
   color: #111;
   font-family: serif;
   overflow: hidden;
+
   h2 {
     font-size: 0.08em;
     text-transform: uppercase;
     margin-bottom: 0.4em;
     text-align: center;
   }
-  h4 {
-    font-size: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 0.4em;
-    text-align: center;
-    font-size: 0.13em;
-  }
-}
 
-.ie9 .instructions h4 {
-  font-size: 0.11em;
-}
-
-.instructions {
   h3 {
     font-size: 0.14em;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 0.4em;
+
     small {
       display: block;
       font-size: 0.54em;
       margin-bottom: 0.1em;
     }
   }
+
+  h4 {
+    text-transform: uppercase;
+    margin-bottom: 0.4em;
+    text-align: center;
+    font-size: 0.13em;
+  }
+
   p {
     font-size: 0.07em;
     text-transform: uppercase;
@@ -189,18 +187,16 @@
   }
 }
 
+.ie9 .instructions h4 {
+  font-size: 0.11em;
+}
+
 .window,
 .instructions {
-  background-color: rgb(223, 224, 217);
-  @include filter-gradient(#dfe0d9, #eff0e8, horizontal);
-  $experimental-support-for-svg: true;
-  @include background-image(
-    radial-gradient(
-      center,
-      ellipse cover,
-      rgba(223, 224, 217, 1) 0%,
-      rgba(239, 240, 232, 1) 100%
-    )
+  background: radial-gradient(
+    ellipse at center,
+    rgb(223 224 217 / 100%) 0%,
+    rgb(239 240 232 / 100%) 100%
   );
 }
 
@@ -208,16 +204,16 @@
   background: #0c4f83;
   padding: 0.06em 0.3em;
   z-index: 10;
-  position: relative;
   box-shadow: 0 0.04em 0.2em #000;
   border: 0.01em solid #1066a8;
   border-bottom: 0;
-  @include border-radius(0.025em);
+  border-radius: 0.025em;
   width: 4.1em;
   margin: 0 auto;
   box-sizing: border-box;
   position: relative;
   text-shadow: 0 0 0.3em #fff;
+
   &::before,
   &::after {
     width: 0.15em;
@@ -225,19 +221,22 @@
     background: #0c4f83;
     border: 0.01em solid #1066a8;
     border-width: 0.01em 0.01em 0;
-    @include border-radius(0.025em 0 0 0.025em);
+    border-radius: 0.025em 0 0 0.025em;
     height: 0.6em;
     position: absolute;
     top: -0.01em;
     z-index: 11;
   }
+
   &::before {
     left: -0.44em;
   }
+
   &::after {
     right: -0.45em;
-    @include border-radius(0 0.025em 0.025em 0);
+    border-radius: 0 0.025em 0.025em 0;
   }
+
   h2 {
     background: #091a45;
     color: #fff;
@@ -246,7 +245,7 @@
     text-transform: uppercase;
     padding: 0.3em;
     border: 0.04em solid #1066a8;
-    @include box-shadow(inset 0 0 0.5em 0 #000);
+    box-shadow: inset 0 0 0.5em 0 #000;
     letter-spacing: 0.1em;
     overflow: hidden;
     height: 1em;
@@ -254,6 +253,7 @@
     width: 11em;
     margin: 0 auto;
     white-space: nowrap;
+
     small {
       font-size: 0.4em;
       margin: 0 1em;
@@ -268,23 +268,22 @@
 }
 
 #base {
-  content: "";
   display: block;
   height: 0.25em;
   width: 5em;
   background: #0c4f83;
-  content: "";
+  content: '';
   margin-left: -0.17em;
   border-top: solid 0.01em #1066a8;
   position: relative;
   z-index: 10;
-  @include border-radius(0.05em 0.05em 0 0);
+  border-radius: 0.05em 0.05em 0 0;
   margin-top: 0.07em;
 }
 
 .skirting {
   display: block;
-  content: "";
+  content: '';
   height: 0.6em;
   width: 4em;
   background: #0c4f83;
@@ -292,23 +291,25 @@
   border: 0.01em solid #1066a8;
   position: relative;
   z-index: 1;
+
   &::before,
   &::after {
-    content: "";
+    content: '';
     display: block;
     width: 0.3em;
     height: 0.4em;
-    border: 0.01em solid black;
     position: absolute;
     bottom: 0.23em;
-    @include border-radius(0.05em 0.05em 0 0);
+    border-radius: 0.05em 0.05em 0 0;
     background: #0c4f83;
     border: 0.01em solid #1066a8;
     border-right: 0.05em solid #0c2d4c;
   }
+
   &::before {
     left: -0.2em;
   }
+
   &::after {
     left: none;
     right: -0.2em;
@@ -318,21 +319,21 @@
 }
 
 .roof {
-  content: "";
+  content: '';
   width: 0;
   height: 0;
-  border-left: 2em solid rgba(255, 255, 255, 0);
-  border-right: 2em solid rgba(255, 255, 255, 0);
+  border-left: 2em solid rgb(255 255 255 / 0%);
+  border-right: 2em solid rgb(255 255 255 / 0%);
   border-bottom: 0.3em solid #1066a8;
   margin-left: 0.32em;
   position: relative;
   margin-bottom: 0.14em;
+
   &::after {
-    content: "";
+    content: '';
     display: block;
     height: 0.25em;
     width: 4.025em;
-    background: #df4800;
     position: absolute;
     left: -2em;
     bottom: -0.57em;
@@ -344,18 +345,19 @@
 .lamp {
   width: 0.45em;
   display: block;
-  content: "";
+  content: '';
   height: 0.65em;
   background: #fff;
-  @include border-radius(0.05em);
+  border-radius: 0.05em;
   position: relative;
   margin: 0 auto -0.05em;
-  @include box-shadow(0 0 2em 0.5em #fff);
+  box-shadow: 0 0 2em 0.5em #fff;
   border: 0.03em solid #1a77ba;
   z-index: 9;
   border-width: 0.03em 0.03em 0;
+
   &::after {
-    content: "";
+    content: '';
     display: block;
     height: 0.15em;
     width: 0.6em;
@@ -363,12 +365,13 @@
     position: absolute;
     bottom: -2;
     left: -0.08em;
-    @include border-radius(0.05em 0.05em 0 0);
+    border-radius: 0.05em 0.05em 0 0;
     z-index: 9;
     border-top: 0.001em #fff;
   }
+
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: -0.01em;
     left: -0.05em;
@@ -382,8 +385,8 @@
 /* Step 5 - We add images for the door handle, lock and badge */
 
 .panel.notice::after {
-  content: "";
-  background: url("../img/tardisSprite.png") 0 -0.2em no-repeat;
+  content: '';
+  background: url('../img/tardisSprite.png') 0 -0.2em no-repeat;
   width: 0.2em;
   height: 0.2em;
   background-size: 0.2em;
@@ -395,9 +398,10 @@
 
 .badge {
   position: relative;
+
   &::before {
-    content: "";
-    background: url("../img/tardisSprite.png") 0 -1em no-repeat;
+    content: '';
+    background: url('../img/tardisSprite.png') 0 -1em no-repeat;
     width: 0.15em;
     height: 0.75em;
     background-size: 0.5em;
@@ -406,9 +410,10 @@
     left: -0.16em;
     top: 1.13em;
   }
+
   &::after {
-    content: "";
-    background: url("../img/tardisSprite.png") no-repeat;
+    content: '';
+    background: url('../img/tardisSprite.png') no-repeat;
     width: 0.5em;
     height: 0.5em;
     background-size: 0.5em;
