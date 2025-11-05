@@ -29,20 +29,20 @@ jobs:
       - name: 🔧 Setup Node.js (Sonic Screwdriver)
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+            node-version: '20'
+            cache: 'yarn'
 
       - name: 🛠️ Install temporal dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
 
       - name: 🔍 Run SCSS diagnostics (Linting)
-        run: npm run lint:scss
+        run: yarn lint:scss
 
       - name: ✨ Format check (Prettier)
-        run: npm run format:check
+        run: yarn format:check
 
       - name: 🎨 Compile SCSS to CSS (Regenerate styles)
-        run: npm run build-css
+        run: yarn build-css
 
       - name: 📄 Setup GitHub Pages
         uses: actions/configure-pages@v4
