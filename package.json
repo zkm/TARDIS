@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zkm/tardis.git"
+    "url": "https://github.com/zkm/TARDIS.git"
   },
   "engines": {
     "node": ">=18.0.0"
