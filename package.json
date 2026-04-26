@@ -28,6 +28,7 @@
     "test:ci": "npm run format:check && npm run test"
   },
   "devDependencies": {
+    "postcss": "^8.5.12",
     "prettier": "^3.8.1",
     "sass": "^1.98.0",
     "stylelint": "^17.4.0",
