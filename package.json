@@ -4,6 +4,7 @@
   "description": "Modernized TARDIS project using Dart Sass",
   "type": "module",
   "license": "MIT",
+  "packageManager": "yarn@4.10.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/zkm/TARDIS.git"

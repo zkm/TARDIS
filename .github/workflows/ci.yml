@@ -21,10 +21,8 @@ jobs:
             node-version: '24'
             cache: 'yarn'
 
-      - name: Enable Corepack and Yarn
-        run: |
-          corepack enable
-          corepack prepare yarn@stable --activate
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Cache Yarn cache (Berry)
         uses: actions/cache@v4
