@@ -14,8 +14,9 @@ permissions:
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Pull requests get their own group so a queued PR build can't displace a queued deploy.
 concurrency:
-  group: "pages"
+  group: ${{ github.event_name == 'pull_request' && format('pages-pr-{0}', github.ref) || 'pages' }}
   cancel-in-progress: false
 
 env:
@@ -66,7 +67,9 @@ jobs:
           path: '.'
 
   # Deployment job
+  # Pull requests only build: the github-pages environment accepts deploys from master alone.
   deploy:
+    if: github.event_name == 'push'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
