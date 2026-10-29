@@ -1,5 +1,17 @@
 # 🌀 TARDIS (Time And Relative Dimensions In Sass)
 
+[![CI](https://github.com/zkm/TARDIS/actions/workflows/ci.yml/badge.svg)](https://github.com/zkm/TARDIS/actions/workflows/ci.yml)
+[![Deploy](https://github.com/zkm/TARDIS/actions/workflows/deploy.yml/badge.svg)](https://github.com/zkm/TARDIS/actions/workflows/deploy.yml)
+[![live demo](https://img.shields.io/website?url=https%3A%2F%2Fzkm.github.io%2FTARDIS%2F&label=live%20demo)](https://zkm.github.io/TARDIS/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
+![Sass](https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![Stylelint](https://img.shields.io/badge/Stylelint-263238?logo=stylelint&logoColor=white)
+![Prettier](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=black)
+![Yarn 4](https://img.shields.io/badge/Yarn-4-2C8EBB?logo=yarn&logoColor=white)
+![Node.js 24](https://img.shields.io/badge/Node.js-24-5FA04E?logo=nodedotjs&logoColor=white)
+
 *"It's bigger on the inside!"* - The Doctor
 
 A time-traveling web project that's been modernized for 2025. This TARDIS has been upgraded from Ruby Compass to Dart Sass and now uses Vite for lightning-fast time vortex navigation (also known as live reloading).
